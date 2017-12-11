@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>Day-02</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <context-param>
+    <description>全局变量</description>
+    <param-name>username</param-name>
+    <param-value>scott</param-value>
+  </context-param>
+  <servlet>
+    <description>FirstServlet类的使用</description>
+    <servlet-name>FirstServlet</servlet-name>
+    <servlet-class>com.hp.servlet.FirstServlet</servlet-class>
+    <init-param>
+      <description>jdbc链接数据库</description>
+      <param-name>driver</param-name>
+      <param-value>oracle.jdbc.driver.OracleDriver</param-value>
+    </init-param>
+    <init-param>
+      <description>jdbc链接url</description>
+      <param-name>driverurl</param-name>
+      <param-value>jdbc:oracle:thin:@localhost:1521:oracle</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FirstServlet</servlet-name>
+    <url-pattern>/FirstServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>SecondServlet</servlet-name>
+    <servlet-class>com.hp.servlet.SecondServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SecondServlet</servlet-name>
+    <url-pattern>/SecondServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
